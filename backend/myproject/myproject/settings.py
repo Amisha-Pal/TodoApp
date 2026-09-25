@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,12 +80,15 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'todo_db',
-        'USER' : 'postgres',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('NEON_DATABASE_NAME'),
+        'USER' : os.getenv('NEON_USER'),
+        'PASSWORD': os.getenv('NEON_PASSWORD'),
+        'HOST': os.getenv('NEON_HOST'),
+        'PORT': os.getenv('NEON_PORT', '5432'),
+        'OPTIONS': {
+            'sslmode': 'require'
+        },  
     }
 }
 
