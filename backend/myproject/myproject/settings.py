@@ -33,8 +33,8 @@ ALLOWED_HOSTS = [
     'todo-app-bg7z.vercel.app'
 ]
 
-if os.environ.get('todo-app-bg7z.vercel.app'): q
-    ALLOWED_HOSTS.append(os.environ.get('todo-app-bg7z.vercel.app'))
+if os.environ.get('VERCEL_URL'): 
+    ALLOWED_HOSTS.append(os.environ.get('VERCEL_URL'))
 
 # Application definition
 
