@@ -27,8 +27,14 @@ SECRET_KEY = 'django-insecure-bp5ubfq_pk^^+60ke#$-o(7oa1v_v+#9$gvw=#qdisry4d_b9o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'todo-app-bg7z.vercel.app'
+]
 
+if os.environ.get('todo-app-bg7z.vercel.app'): q
+    ALLOWED_HOSTS.append(os.environ.get('todo-app-bg7z.vercel.app'))
 
 # Application definition
 
