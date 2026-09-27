@@ -30,7 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'todo-app-bg7z.vercel.app'
+    '.vercel.app'
 ]
 
 if os.environ.get('VERCEL_URL'): 
