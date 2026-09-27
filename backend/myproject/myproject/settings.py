@@ -29,9 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-if os.environ.get('VERCEL_URL'): 
-    ALLOWED_HOSTS.append(os.environ.get('VERCEL_URL'))
-
 # Application definition
 
 INSTALLED_APPS = [
